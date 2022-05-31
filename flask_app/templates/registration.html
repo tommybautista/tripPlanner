@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block header %}
+	{% if 'user_id' in session %}
+		<div>
+			<a href="/logout" class="text-light" style="text-decoration: none; margin-right: 10px;">Logout</a>
+		</div>
+	{% else %}
+		<div>
+			<a href="/login" class="text-light" style="text-decoration: none; margin-right: 10px;">Login</a>
+		</div>
+		<div>
+			<a href="/" class="text-light" style="text-decoration: none;">Dashboard</a>
+		</div>
+	{% endif %}
+{% endblock header %}
+
+{% block content %}
+	<div class="container-fluid">
+		
+		<div class="bg-info mt-2" style="padding: 15px; border-radius: 5px;">
+
+			<div>
+				<form action="/users/register" method="POST">
+					<legend class="border-bottom">
+						<h2 class="display-4 text-light">
+						Register Now!
+						</h2>
+					</legend>
+
+					<label for="username" class="display-6 text-center text-light">Username</label>
+					<input type="text" class="form-control mt-2" name="username">
+
+					<label for="email" class="display-6 text-center text-light">Email</label>
+					<input type="email" class="form-control mt-2" name="email">
+
+					<label for="password" class="display-6 text-center text-light">Password</label>
+					<input type="password" class="form-control mt-2" name="password">
+
+					<label for="confirm_password" class="display-6 text-center text-light">Confirm Password</label>
+					<input type="password" class="form-control mt-2" name="confirm_password">
+	
+					<button type="submit" action="" class="btn btn-warning mt-3 mb-3 form-control">REGISTER</button>
+				</form>
+			</div>
+			<div class="border-top">
+				<p style="text-align: center;" class="border-tops text-light"> Have an account <a style="color: white;" href="/login"> Login </a> instead!
+			</div>
+{% endblock content %}
