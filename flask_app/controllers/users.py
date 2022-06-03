@@ -7,7 +7,13 @@ bcrypt = Bcrypt(app)
 
 @app.route('/')
 def index():
+    if 'user_id' in session:
+        user_data = {
+        "id" : session['user_id']
+        }
+        return render_template('dashboard.html', user = User.get_user_by_id(user_data), events = Event.get_events_by_user(user_data))
     return render_template('index.html')
+
 
 @app.route('/login')
 def login():

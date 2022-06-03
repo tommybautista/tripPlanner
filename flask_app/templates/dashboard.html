@@ -24,7 +24,7 @@
 					</div>
 					<div class="form-group" style="display: flex; justify-content: space-between; margin-bottom: 4px; align-items: baseline;">
 						<label for="breakfast" class="display-6">Breakfast</label>						
-						<div style="margin-top: 20px;" class="text-muted">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_breakfast" class="character text-center"></div>
+						<div style="margin-top: 20px; color: rgb(190, 190, 190);">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_breakfast" class="character text-center" style="color: rgb(190, 190, 190);"></div>
 					</div>
 					<div>
 						<input type="text" class="form-control" name="breakfast" onkeyup="textCounter_breakfast(this,'counter_breakfast',45);">
@@ -32,7 +32,7 @@
 
 					<div class="form-group" style="display: flex; justify-content: space-between; margin-bottom: 4px; align-items: baseline;">
 						<label for="morning" class="display-6">Morning</label>
-						<div style="margin-top: 20px;" class="text-muted">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_morning" class="character text-center"></div>
+						<div style="margin-top: 20px; color: rgb(190, 190, 190);">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_morning" class="character text-center" style="color: rgb(190, 190, 190);"></div>
 					</div>
 					<div>
 						<input type="text" class="form-control" name="morning" onkeyup="textCounter_morning(this,'counter_morning',45);">
@@ -40,7 +40,7 @@
 
 					<div class="form-group" style="display: flex; justify-content: space-between; margin-bottom: 4px; align-items: baseline;">
 						<label for="lunch" class="display-6">Lunch</label>
-						<div style="margin-top: 20px;" class="text-muted">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_lunch" class="character text-center"></div>
+						<div style="margin-top: 20px; color: rgb(190, 190, 190);">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_lunch" class="character text-center" style="color: rgb(190, 190, 190);"></div>
 					</div>
 					<div>
 						<input type="text" class="form-control" name="lunch" onkeyup="textCounter_lunch(this,'counter_lunch',45);">
@@ -48,7 +48,7 @@
 
 					<div class="form-group" style="display: flex; justify-content: space-between; margin-bottom: 4px; align-items: baseline;">
 						<label for="afternoon" class="display-6">Afternoon</label>
-						<div style="margin-top: 20px;" class="text-muted">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_afternoon" class="character text-center"></div>
+						<div style="margin-top: 20px; color: rgb(190, 190, 190);">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_afternoon" class="character text-center" style="color: rgb(190, 190, 190);"></div>
 					</div>
 					<div>
 						<input type="text" class="form-control" name="afternoon" onkeyup="textCounter_afternoon(this,'counter_afternoon',45);">
@@ -56,7 +56,7 @@
 
 					<div class="form-group" style="display: flex; justify-content: space-between; margin-bottom: 4px; align-items: baseline;">
 						<label for="dinner" class="display-6">Dinner</label>
-						<div style="margin-top: 20px;" class="text-muted">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_dinner" class="character text-center"></div>
+						<div style="margin-top: 20px; color: rgb(190, 190, 190);">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_dinner" class="character text-center" style="color: rgb(190, 190, 190);"></div>
 					</div>
 					<div>
 						<input type="text" class="form-control" name="dinner" onkeyup="textCounter_dinner(this,'counter_dinner',45);">
@@ -64,7 +64,7 @@
 
 					<div class="form-group" style="display: flex; justify-content: space-between; margin-bottom: 4px; align-items: baseline;">
 						<label for="evening" class="display-6">Evening</label>
-						<div style="margin-top: 20px;" class="text-muted">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_evening" class="character text-center"></div>
+						<div style="margin-top: 20px; color: rgb(190, 190, 190);">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_evening" class="character text-center" style="color: rgb(190, 190, 190);"></div>
 					</div>
 					<div>
 						<input type="text" class="form-control" name="evening" onkeyup="textCounter_evening(this,'counter_evening',45);">
@@ -95,7 +95,7 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th scope="row" style="font-family: 'Roboto', sans-serif; font-size: 25px;">{{event.date}}</th>
+						<th scope="row" style="font-family: 'Roboto', sans-serif; font-size: 21px;">{{event.date}}</th>
 						<td style="font-family: 'Roboto', sans-serif; font-size: 17px; display: flex; justify-content: end;">
 							<a href="/update/{{event.id}}" class="btn btn-primary" style="font-size: 12px; margin: 10px;">Update</a>
 							<a href="/destroy/{{event.id}}" class="btn btn-danger" style="font-size: 12px; margin: 10px;">Delete</a>
