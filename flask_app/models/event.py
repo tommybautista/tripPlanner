@@ -56,7 +56,7 @@ class Event:
 
     @classmethod
     def get_events_by_user(cls, data):
-        query = 'SELECT * FROM events WHERE user_id = %(id)s;'
+        query = 'SELECT * FROM events WHERE user_id = %(id)s ORDER BY date ASC;'
         results =  connectToMySQL(cls.db_name).query_db(query, data)
         all_events = []
         for row in results:

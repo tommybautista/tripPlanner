@@ -9,7 +9,6 @@ bcrypt = Bcrypt(app)
 def index():
     return render_template('index.html')
 
-
 @app.route('/login')
 def login():
     return render_template("login.html", title='Login')
@@ -62,9 +61,55 @@ def dashboard():
     print(user_data)
     return render_template('dashboard.html', user = User.get_user_by_id(user_data), events = Event.get_events_by_user(user_data))
 
+@app.route('/account/<int:id>')
+@app.route('/account')
+def account(id):
+    data = {
+        "id" : id
+    }
+    print(id)
+    return render_template('/account.html', user = User.get_user_by_id(data))
+
+
+@app.route('/update_user/<int:id>')
+def update_user(id):
+    data = {
+        "id" : id
+    }
+    print(id)
+    return render_template('/user_update.html',user = User.get_user_by_id(data))
+
+@app.route("/user_update_submit/<int:id>", methods=['POST'])   
+def user_update_submit(id):
+    if not User.validate_update(request.form):
+        return redirect(f'/update_user/{id}')
+    pw_hash = bcrypt.generate_password_hash(request.form['password'])
+    update_data = {
+        "id" : request.form['id'],
+        "username" : request.form['username'],
+        "email" : request.form['email'],
+        "password" : pw_hash
+    }
+    User.update(update_data)
+    flash('Account Updated!', 'success')
+    return redirect(f'/account/{id}')
+
+
+
+@app.route('/destroy_account/<int:id>')
+def destroy_account(id):
+    data = {
+        "id" : id
+    }
+    User.destroy(data)
+    session.clear()
+    if 'user_id' not in session:
+        flash('Your account have been successfully deleted!', 'success')
+    return redirect('/')    
+
 @app.route('/logout')
 def logout():
     session.clear()
     if 'user_id' not in session:
         flash('You have successfully logged out!', 'success')
-    return redirect('/')
+    return redirect('/')    

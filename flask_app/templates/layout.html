@@ -45,6 +45,9 @@
         {% block header %}
             {% if 'user_id' in session %}
                 <div>
+                    <a href="/account/{{user.id}}" class="text-light" style="text-decoration: none; margin-right: 10px;">Account</a>
+                </div>
+                <div>
                     <a href="/logout" class="text-light" style="text-decoration: none; margin-right: 10px;">Logout</a>
                 </div>
             {% else %}
@@ -58,7 +61,7 @@
         {% endblock header %}
     </div>
 
-    <div class="text-center" style="">
+    <div class="text-center">
 		{% with messages = get_flashed_messages(with_categories = true) %}     <!-- declare a variable called messages -->
 			{% if messages %}                            <!-- check if there are any messages -->
 				{% for category, message in messages %}            <!-- loop through the messages -->
