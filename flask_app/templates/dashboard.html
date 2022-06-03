@@ -11,7 +11,7 @@
 			<h3 class="display-6 text-center">Let's plan your Day!</h3>
 		</div>
 
-		<div class="bg-info mt-2" style="padding: 15px; border-radius: 5px;">
+		<div class="mt-2" style="padding: 15px; border-radius: 5px; background-color: #eee;>
 
 			<div>
 				<form action="/add" method="POST">
@@ -19,32 +19,38 @@
 					<input type="hidden" name="id" value="1">
 
 					<div class="form-group">
-						<label for="date" class="display-6 text-light">Date</label>
+						<label for="date" class="display-6">Date</label>
 						<input type="date" class="form-control" name="date" placeholder="">
 					</div>
 					<div class="form-group">
-						<label for="breakfast" class="display-6 text-light">Breakfast</label>
-						<input type="text" class="form-control" name="breakfast" placeholder="Input anything">
+						<label for="breakfast" class="display-6">Breakfast</label>
+						<input type="text" class="form-control" name="breakfast" onkeyup="textCounter_breakfast(this,'counter_breakfast',45);">
+						<div style="text-align: right;">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_breakfast" class="character text-center"></div>
 					</div>
 					<div class="form-group">
-						<label for="morning" class="display-6 text-light">Morning</label>
-						<input type="text" class="form-control" name="morning" placeholder="Input anything">
+						<label for="morning" class="display-6">Morning</label>
+						<input type="text" class="form-control" name="morning" onkeyup="textCounter_morning(this,'counter_morning',45);">
+						<div style="text-align: right;"><p">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_morning" class="character text-center"></p></div>
 					</div>
 					<div class="form-group">
-						<label for="lunch" class="display-6 text-light">Lunch</label>
-						<input type="text" class="form-control" name="lunch" placeholder="Input anything">
+						<label for="lunch" class="display-6">Lunch</label>
+						<input type="text" class="form-control" name="lunch" onkeyup="textCounter_lunch(this,'counter_lunch',45);">
+						<div style="text-align: right;"><p">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_lunch" class="character text-center"></p></div>
 					</div>
 					<div class="form-group">
-						<label for="afternoon" class="display-6 text-light">Afternoon</label>
-						<input type="text" class="form-control" name="afternoon" placeholder="Input anything">
+						<label for="afternoon" class="display-6">Afternoon</label>
+						<input type="text" class="form-control" name="afternoon" onkeyup="textCounter_afternoon(this,'counter_afternoon',45);">
+						<div style="text-align: right;"><p">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_afternoon" class="character text-center"></p></div>
 					</div>
 					<div class="form-group">
-						<label for="dinner" class="display-6 text-light">Dinner</label>
-						<input type="text" class="form-control" name="dinner" placeholder="Input anything">
+						<label for="dinner" class="display-6">Dinner</label>
+						<input type="text" class="form-control" name="dinner" onkeyup="textCounter_dinner(this,'counter_dinner',45);">
+						<div style="text-align: right;"><p">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_dinner" class="character text-center"></p></div>
 					</div>
 					<div class="form-group">
-						<label for="evening" class="display-6 text-light">Evening</label>
-						<input type="text" class="form-control" name="evening" placeholder="Input anything">
+						<label for="evening" class="display-6">Evening</label>
+						<input type="text" class="form-control" name="evening" onkeyup="textCounter_evening(this,'counter_evening',45);">
+						<div style="text-align: right;"><p">Remaining: <input disabled  maxlength="1" size="1" value="45" id="counter_evening" class="character text-center"></p></div>
 					</div>
 					<div class="mb-3">
 						<input type="hidden" class="form-control" name="user_id">
