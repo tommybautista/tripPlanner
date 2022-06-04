@@ -93,13 +93,6 @@ class User:
             is_valid = False
         if not EMAIL_REGEX.match(user['email']): 
             flash("Invalid email address!", 'danger')
-            is_valid = False
-
-        if len(user['password']) < 8:
-            flash("Password must be at least 8 characters", "danger")
-            is_valid = False
-        if user['password'] != user['confirm_password']:
-            flash("Password must match", "danger")
-            is_valid = False            
+            is_valid = False          
         return is_valid
 

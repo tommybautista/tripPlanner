@@ -89,12 +89,10 @@ def update_user(id):
 def user_update_submit(id):
     if not User.validate_update(request.form):
         return redirect(f'/update_user/{id}')
-    pw_hash = bcrypt.generate_password_hash(request.form['password'])
     update_data = {
         "id" : request.form['id'],
         "username" : request.form['username'],
         "email" : request.form['email'],
-        "password" : pw_hash
     }
     User.update(update_data)
     flash('Account Updated!', 'success')
