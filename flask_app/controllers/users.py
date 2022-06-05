@@ -94,7 +94,7 @@ def user_update_submit(id):
         "username" : request.form['username'],
         "email" : request.form['email'],
     }
-    User.update(update_data)
+    User.update(id)
     flash('Account Updated!', 'success')
     return redirect(f'/account/{id}')
 

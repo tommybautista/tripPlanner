@@ -32,16 +32,10 @@
                     <th scope="row" style="font-family: 'Roboto', sans-serif; font-size: 17px;">Email:</th>
                     <td scope="row" style="font-family: 'Roboto', sans-serif; font-size: 17px;">{{user.email}}</td>
                 </tr>
-                <tr>
-                    <th scope="row" style="font-family: 'Roboto', sans-serif; font-size: 17px;">Password:</th>
-                    <td scope="row" style="font-family: 'Roboto', sans-serif; font-size: 17px; -webkit-text-security: disc;">{{user.password}}</td>
-                </tr>
             </tbody>
         </table>
     </div>
-    <div>
-        <a href="/update_user/{{user.id}}" class="btn btn-primary form-control">Update Account </a>
-    </div>
+
     <div>
         <a href="/destroy_account/{{user.id}}" class="btn btn-danger form-control mt-2">Delete Account </a>
     </div>
