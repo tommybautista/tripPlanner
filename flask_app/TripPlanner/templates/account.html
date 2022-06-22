@@ -1,0 +1,44 @@
+{% extends "layoutTripPlanner.html" %}
+
+{% block header %}
+    {% if 'user_id' in session %}
+        <div>
+            <a href="/dashboard" class="text-light" style="text-decoration: none; margin-right: 10px;">Dashboard</a>
+        </div>
+        <div>
+            <a href="/logout" class="text-light" style="text-decoration: none; margin-right: 10px;">Logout</a>
+        </div>
+        {% else %}
+        <div>
+            <a href="/login" class="text-light" style="text-decoration: none; margin-right: 10px;">Login</a>
+        </div>
+        <div>
+            <a href="/register" class="text-light" style="text-decoration: none;">Register</a>
+        </div>
+    {% endif %}
+{% endblock header %}
+
+{%block content%}
+<div class="container-fluid">
+
+    <div>
+        <table class="table table-hover">
+            <tbody>
+                <tr>
+                    <th scope="row" style="font-family: 'Roboto', sans-serif; font-size: 17px;">Username:</th>
+                    <td scope="row" style="font-family: 'Roboto', sans-serif; font-size: 17px;">{{user.username}}</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="font-family: 'Roboto', sans-serif; font-size: 17px;">Email:</th>
+                    <td scope="row" style="font-family: 'Roboto', sans-serif; font-size: 17px;">{{user.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <a href="/destroy_account/{{user.id}}" class="btn btn-danger form-control mt-2">Delete Account </a>
+    </div>
+</div>
+
+{%endblock content%}
